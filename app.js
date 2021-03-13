@@ -58,4 +58,4 @@ concierge.on('message', msg => {
             })
     }
 })
-concierge.login('NzU3MzE5MjQ5NTI1MDgwMTU3.X2eqgw.jT3xkyJzopP9wMYTmuPv9gkyMtw')
+concierge.login(TOKEN)
