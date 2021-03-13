@@ -1,0 +1,17 @@
+{
+  "name": "pro-pulse-concierge",
+  "version": "0.0.1",
+  "description": "The official Pro Pulse Aviation concierge discord bot",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Davide Torresan",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
