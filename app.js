@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const concierge = new Discord.Client()
 const axios = require('axios')
+require('dotenv').config()
 const prefix = '@'
 
 concierge.on('ready', () =>{
@@ -33,7 +34,7 @@ concierge.on('message', msg => {
         let data = [];  
 
         const options = {
-            headers: {'X-API-Key': ''}
+            headers: {'X-API-Key': process.env.TOKEN_WX}
         };
         
         axios.get(`https://api.checkwx.com/metar/${args}/decoded`, options)
@@ -58,4 +59,4 @@ concierge.on('message', msg => {
             })
     }
 })
-concierge.login(TOKEN)
+concierge.login(process.env.TOKEN_DISCORD)
