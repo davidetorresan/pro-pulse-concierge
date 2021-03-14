@@ -72,8 +72,8 @@ concierge.on('message', msg => {
         const args = msg.content.slice(prefix.length).trim().split(' ')[1]
         const link = `https://chartfox.org/${args}`
 
-        msg.author.send(`Hi!\nYou can found the charts for ${args} airport here! ${link}\n:warning: You need to log in with a vatsim account to view the cards :warning:`)
-        msg.channel.reply(`The ${args} charts are sent in DM!`)
+        msg.author.send(`Hi!\nYou can found the charts for ${args} airport here! ${link}\n:warning: You need to log in with a vatsim account to view the charts :warning:`)
+        msg.author.reply(`The ${args} charts are sent in DM!`)
         
     }
 })
