@@ -99,7 +99,7 @@ concierge.on('message', async msg => {
             .setColor('#0099ff')
 
         const msgReaction = await msg.channel.send(ReactionEmbed)
-        msg.react('👌')
+        msgReaction.react('👌')
     }
 
 })
