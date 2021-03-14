@@ -15,7 +15,7 @@ concierge.on('ready', () =>{
   console.log(`Logged in as ${concierge.user.tag}`)
 }) 
 
-concierge.on('message', msg => {
+concierge.on('message', async msg => {
 
   //Clear chat command
 
@@ -98,8 +98,8 @@ concierge.on('message', msg => {
             .setDescription('React this message to gain your Role!')
             .setColor('#0099ff')
 
-        const msgReaction = msg.channel.send(ReactionEmbed)
-        msgReaction.react('👌')
+        const msgReaction = await msg.channel.send(ReactionEmbed)
+        msg.react('👌')
     }
 
 })
