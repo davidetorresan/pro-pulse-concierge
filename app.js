@@ -73,11 +73,7 @@ concierge.on('message', msg => {
         const link = `https://chartfox.org/${args}`
 
         msg.author.send(`
-          Hi!
-          \n
-          You can found the charts for ${args} airport here! ${link}
-          \n
-          :warning: You need to log in with a vatsim account to view the cards :warning:
+          Hi!\nYou can found the charts for ${args} airport here! ${link}\n:warning: You need to log in with a vatsim account to view the cards :warning:
         `)
         
     }
