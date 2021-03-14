@@ -31,7 +31,7 @@ concierge.on('message', msg => {
 
         const args = msg.content.slice(prefix.length).trim().split(' ');
 
-        let data = [];  
+        let data = [];
 
         const options = {
             headers: {'X-API-Key': process.env.TOKEN_WX}
@@ -42,19 +42,19 @@ concierge.on('message', msg => {
                 data = resp.data.data[0]
             })
             .then(() => {
-                    const WeatherEmbed = new Discord.MessageEmbed()
-                        .setColor('#0099ff')
-                        .setTitle(`Weather for ${data.icao}`)
-                        .setDescription(`${data.observed}`)
-                        .addFields(
-                            { name: `✅ Flight Rules: `, value: `${data.flight_category}`, inline: true },
-                            { name: `💨 Wind: `, value: `${data.wind.degrees}° ${data.wind.speed_kts} kts`, inline: true },
-                            { name: `🌡️ Temperature: `, value: `${data.temperature.celsius}° (${data.temperature.fahrenheit}°F)`, inline: true },
-                            { name: `💦 Dewpoint: `, value: `${data.dewpoint.celsius}° (${data.dewpoint.fahrenheit}°F)`, inline: true },
-                            { name: `🥵 Humidity: `, value: `${data.humidity.percent}%`, inline: true },
-                            { name: `🌀 QNH: `, value: `${data.barometer.hpa} hpa (${data.barometer.hg} hg)`, inline: true },
-                        )
-                        .setFooter('Powered by Pro Pulse Aviation Development Department & CheckWX', 'https://aviation.propulsegaming.com/loghi/logo.png');
+                const WeatherEmbed = new Discord.MessageEmbed()
+                    .setColor('#0099ff')
+                    .setTitle(`Weather for ${data.icao}`)
+                    .setDescription(`${data.observed}`)
+                    .addFields(
+                        { name: `✅ Flight Rules: `, value: `${data.flight_category}`, inline: true },
+                        { name: `💨 Wind: `, value: `${data.wind.degrees}° ${data.wind.speed_kts} kts`, inline: true },
+                        { name: `🌡️ Temperature: `, value: `${data.temperature.celsius}° (${data.temperature.fahrenheit}°F)`, inline: true },
+                        { name: `💦 Dewpoint: `, value: `${data.dewpoint.celsius}° (${data.dewpoint.fahrenheit}°F)`, inline: true },
+                        { name: `🥵 Humidity: `, value: `${data.humidity.percent}%`, inline: true },
+                        { name: `🌀 QNH: `, value: `${data.barometer.hpa} hpa (${data.barometer.hg} hg)`, inline: true },
+                    )
+                    .setFooter('Powered by Pro Pulse Aviation Development Department & CheckWX', 'https://aviation.propulsegaming.com/loghi/logo.png');
                 msg.channel.send(WeatherEmbed)     
             })
     }
