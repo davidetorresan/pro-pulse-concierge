@@ -8,7 +8,7 @@ concierge.on('ready', () =>{
     concierge.user.setPresence({
         status: 'available',
         activity: {
-            name: '.help',
+            name: '@help',
             type: 'WATCHING'
         }
     })
