@@ -97,7 +97,6 @@ concierge.on('message', async msg => {
             .setTitle('Welcome into Pro Pulse Aviation Discord Server!')
             .setDescription('React this message to gain your Role!')
             .setColor('#0099ff')
-            .setImage('https://images-ext-1.discordapp.net/external/fatGX5s9J-HxZQLYo7k6oCoYQLbio_yfRduoaCcUbrE/https/aviation.propulsegaming.com/loghi/logo.png')
             .setFooter('Powered by Pro Pulse Aviation Development Department', 'https://aviation.propulsegaming.com/loghi/logo.png')
 
         const msgReaction = await msg.channel.send(ReactionEmbed)
