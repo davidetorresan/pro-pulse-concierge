@@ -17,6 +17,19 @@ concierge.on('ready', () =>{
 
 concierge.on('message', async msg => {
 
+  //Help Bot
+  if(msg.content.toLocaleLowerCase().startsWith(prefix + 'help')){
+    const helpEmbed = new Discord.MessageEmbed()
+      .setColor('#0099ff')
+      .setTitle('There are all my commands')
+      .setDescription('All you can need to take off')
+      .addFields(
+        {name: '@weather <ICAO>', value: 'This show you the last weather information of the airport'},
+        {name: '@charts <ICAO>', value: 'This send you the aeronautical charts link of the airport'}
+      )
+      .setFooter('Powered by Pro Pulse Aviation Development Department', 'https://aviation.propulsegaming.com/loghi/logo.png')
+    msg.channel.send(helpEmbed)
+  }
   //Clear chat command
 
   if(msg.content.toLocaleLowerCase().startsWith(prefix + 'clear')){
@@ -95,7 +108,14 @@ concierge.on('message', async msg => {
 
         const ReactionEmbed = new Discord.MessageEmbed()
             .setTitle('Welcome into Pro Pulse Aviation Discord Server!')
-            .setDescription('React this message to gain your Role!')
+            .setDescription('Hi! \n Welcome to Pro Pulse Aviation (a Pro Pulse Gaming A.S.D. project) Discord server. Pleasy Pay attention to the following informations:')
+            .addFields(
+              { name: 'How can i get full access to the server?', value: 'Due our R&R, the Pro Pulse Aviation HQ decided to recstrict the amount of power to the users without any roles on this server. Therefore it is mandatory to join the Awaiting Approval state by clicking on the *reaction to this message*'},
+              { name: 'Discord Rules', value: 'Check our discord rules in the #regulation channel. Behaviours may lead to suspension and / or ban from community.' },
+              { name: 'Name', value: '- Staff members must use *Name Surname* \n - Users must use *Name Surname*' },
+              { name: 'Our Website', value: 'Below you will find the access link to our Aviation website, where you can register if you have not already done that.' }
+
+            )
             .setColor('#0099ff')
             .setFooter('Powered by Pro Pulse Aviation Development Department', 'https://aviation.propulsegaming.com/loghi/logo.png')
 
