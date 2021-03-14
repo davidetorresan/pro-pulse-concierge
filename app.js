@@ -62,7 +62,6 @@ concierge.on('message', msg => {
                     )
                     .setFooter('Powered by Pro Pulse Aviation Development Department & CheckWX', 'https://aviation.propulsegaming.com/loghi/logo.png');
                 msg.channel.send(WeatherEmbed)   
-                msg.author.send(args)  
             })
     }
 
