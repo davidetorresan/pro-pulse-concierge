@@ -33,7 +33,7 @@ concierge.on('message', msg => {
         let data = [];  
 
         const options = {
-            headers: {'X-API-Key': '7c0cb35fceee40d49d5f6f2e23'}
+            headers: {'X-API-Key': ''}
         };
         
         axios.get(`https://api.checkwx.com/metar/${args}/decoded`, options)
