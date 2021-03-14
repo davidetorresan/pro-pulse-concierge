@@ -98,8 +98,8 @@ concierge.on('message', msg => {
             .setDescription('React this message to gain your Role!')
             .setColor('#0099ff')
 
-        msg.channel.send(ReactionEmbed)   
-        ReactionEmbed.react(`👌`)
+        const msgReaction = msg.channel.send(ReactionEmbed)
+        msgReaction.react(`👌`)
     }
 
 })
