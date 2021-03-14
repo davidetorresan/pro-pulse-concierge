@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const concierge = new Discord.Client()
+const concierge = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] })
 const axios = require('axios')
 const keepAlive = require('./server');
 const prefix = '@'
@@ -76,6 +76,32 @@ concierge.on('message', msg => {
         msg.reply(`The ${args} charts are sent in DM!`)
         
     }
+
+    //Charts Command
+
+    if(msg.content.toLocaleLowerCase().startsWith(prefix + 'charts')){
+
+        const args = msg.content.slice(prefix.length).trim().split(' ')[1]
+        const link = `https://chartfox.org/${args}`
+
+        msg.author.send(`Hi!\nYou can found the charts for ${args} airport here! ${link}\n:warning: You need to log in with a vatsim account to view the charts :warning:`)
+        msg.reply(`The ${args} charts are sent in DM!`)
+        
+    }
+
+    //Reaction message creation Command
+
+    if(msg.content.toLocaleLowerCase().startsWith(prefix + 'reaction')){
+
+        const ReactionEmbed = new Discord.MessageEmbed()
+            .setTitle('Welcome into Pro Pulse Aviation Discord Server!')
+            .setDescription('React this message to gain your Role!')
+            .setColor('#0099ff')
+
+        msg.channel.send(ReactionEmbed)   
+        
+    }
+
 })
 
 keepAlive();
