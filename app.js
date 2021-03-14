@@ -115,7 +115,6 @@ concierge.on('messageReactionAdd', async (reaction, user) =>{
             await reaction.message.guild.members.cache.get(user.id).roles.add('779804041869131796')
         }
     }
-
 })
 
 concierge.on('messageReactionRemove', async (reaction, user) =>{
@@ -130,8 +129,7 @@ concierge.on('messageReactionRemove', async (reaction, user) =>{
             await reaction.message.guild.members.cache.get(user.id).roles.remove('779804041869131796')
         }
     }
-
 })
 
-keepAlive();
+keepAlive()
 concierge.login(process.env.TOKEN_DISCORD)
