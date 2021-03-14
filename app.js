@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const concierge = new Discord.Client()
 const axios = require('axios')
-require('dotenv').config()
+const keepAlive = require('./server');
 const prefix = '@'
 
 concierge.on('ready', () =>{
@@ -77,4 +77,6 @@ concierge.on('message', msg => {
         
     }
 })
+
+keepAlive();
 concierge.login(process.env.TOKEN_DISCORD)
